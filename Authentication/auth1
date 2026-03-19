@@ -1,0 +1,18 @@
+const express = require("express")
+const app = express()
+const port = 3000
+
+app.get("/signin",function(req,res){
+    const username = req.query.username
+    const password = req.query.password
+
+    if (username == "shashank" && password == "midascreak"){
+        //do something with kidney here
+        res.json({
+            msg : "your kidney is fine"
+        })
+    }
+    res.status(400).json({msg : "somethings up with your inputs"})
+})
+
+app.listen(port)
